@@ -1,5 +1,14 @@
 # Data-Visualization-Covid19
 
+## **For better view, please visit 
+
+## Top 10 Confirmed
+![top10confirmed](https://user-images.githubusercontent.com/63402638/120363177-67b16600-c33e-11eb-9cde-ec61fb7b004a.png)
+
+## Top 10 Recovered
+![top10recovered](https://user-images.githubusercontent.com/63402638/120363216-726bfb00-c33e-11eb-87d9-0c268e3bab3d.png)
+
+
 ## Case Comparison
 ![case-comparison](https://user-images.githubusercontent.com/63402638/120138153-83b2eb80-c208-11eb-8058-a64da674d868.png)
 
@@ -8,7 +17,8 @@
 
 
 ## Last Update 31-Mei-2021
-![29-05-2021](https://user-images.githubusercontent.com/63402638/120138078-4e0e0280-c208-11eb-8259-786844fe7650.png)
+![31-05-2021](https://user-images.githubusercontent.com/63402638/120363103-58321d00-c33e-11eb-8d33-70627db03551.png)
+
 
 ## Time Series Confirmed
 ![confirmed](https://user-images.githubusercontent.com/84367536/119071372-46867680-ba1c-11eb-9847-ea63b7258867.png)
