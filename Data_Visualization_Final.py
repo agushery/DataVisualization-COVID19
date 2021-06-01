@@ -167,14 +167,15 @@ data.head()
 # sort data with groupped time
 data['Time'] = pd.to_datetime(data['Time'])
 dataGroup = data.groupby('Time')[["Confirmed","Deaths","Recovered","Active"]].sum()
+dataGroup.head()
 
 # %% [markdown]
 # **Initiation last day of data**
 
 # %%
-
 recent_date = data['Time'].max()
 last_day = data[data['Time'] == recent_date]
+last_day.head()
 
 # %% [markdown]
 # **MERGE DATA Last Day With Population**
@@ -182,6 +183,17 @@ last_day = data[data['Time'] == recent_date]
 # %%
 final_data = pd.merge(last_day, population_data)
 final_data.head()
+
+# %% [markdown]
+# **Check Missing Values**
+
+# %%
+def draw_missing_data_table(data):
+    total = data.isnull().sum().sort_values(ascending=False)
+    percent = (data.isnull().sum()/data.isnull().count()).sort_values(ascending=False)
+    missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
+    return missing_data
+draw_missing_data_table(final_data)
 
 # %% [markdown]
 # **Comparison of the number of deaths and active cases to the population of each country**
@@ -196,45 +208,171 @@ final_data.head()
 # **Create Quartil**
 
 # %%
-q1_confirmed = np.percentile(final_data['%Confirmed'],25)
-q2_confirmed = np.percentile(final_data['%Confirmed'],50)
-q1_deaths = np.percentile(final_data['%Deaths'],25)
-q2_deaths = np.percentile(final_data['%Deaths'],50)
-q1_active = np.percentile(final_data['%Active'],25)
-q2_active = np.percentile(final_data['%Active'],50)
+q1_confirmed = np.quantile(final_data['%Confirmed'],0.25)
+q2_confirmed = np.quantile(final_data['%Confirmed'],0.50)
+q1_deaths = np.quantile(final_data['%Deaths'],0.25)
+q2_deaths = np.quantile(final_data['%Deaths'],0.50)
+q1_active = np.quantile(final_data['%Active'],0.25)
+q2_active = np.quantile(final_data['%Active'],0.50)
 
 # %% [markdown]
 # ### **Category Country by Quartil**
 
 # %%
-cukupRawan = final_data[(final_data['%Deaths'] <= q1_deaths) | (final_data['%Active'] <= q1_active)]
-rawan = final_data[(((final_data['%Deaths'] > q1_deaths) & (final_data['%Deaths'] <= q2_deaths)) | ((final_data['Active'] > q1_active) & (final_data['%Active'] <= q2_active)))]
+cukupRawan = final_data[(final_data['%Deaths'] <= q1_deaths) & (final_data['%Active'] <= q1_active)]
+rawan = final_data[(((final_data['%Deaths'] > q1_deaths) & (final_data['%Deaths'] <= q2_deaths)) & ((final_data['Active'] > q1_active) & (final_data['%Active'] <= q2_active)))]
 sangatRawan = final_data[(final_data['%Deaths'] > q2_deaths) | (final_data['%Active'] > q2_active)]
 
 # %% [markdown]
 # ## **VISUALIZATION DATA**
 # %% [markdown]
-# ### **Trend Confirmed, Deaths, Recovered, and Active Case**
+# ### **Bar plot Top 10 Case**
+
+# %%
+df_countries_case = final_data.copy()
+df_countries_case.index = df_countries_case["Country/Region"]
+df_countries_case = df_countries_case.drop(['Country/Region'],axis=1)
+
+
+# %%
+def topcase(tipe, warna):
+    plt.axes(axisbelow=True)
+    plt.barh(
+        df_countries_case.sort_values(tipe)[tipe].index[-10:],
+        df_countries_case.sort_values(tipe)[tipe].values[-10:],
+        color=warna)
+    plt.tick_params(size=5,labelsize = 13)
+    plt.xlabel(tipe + " Cases",fontsize=18)
+    plt.title("Top 10 Countries ( " + tipe +" Cases)",fontsize=20)
+
+    plt.grid(alpha=0.3)
+    plt.show()
+
+
+# %%
+topcase('Confirmed','darkcyan')
+
+
+# %%
+topcase('Deaths', 'crimson')
+
+
+# %%
+topcase('Active', 'darkorange')
+
+
+# %%
+topcase('Recovered', 'limegreen')
+
+# %% [markdown]
+# ### **Pie Plot Top 10 Cases**
+
+# %%
+sortConfirmed= final_data.nlargest(10, "Confirmed")
+sortConfirmed.sort_values(by = "Confirmed", ascending = False, inplace = True)
+fig1, ax1 = plt.subplots()
+ax1.pie(
+    sortConfirmed['Confirmed'],
+    labels=sortConfirmed['Country/Region'],
+    autopct='%1.1f%%',
+    startangle=90)
+ax1.axis('equal')
+plt.title('Top 10 Confirmed Case')
+plt.show()
+
+
+# %%
+sortDeaths= final_data.nlargest(10, "Deaths")
+sortDeaths.sort_values(by = "Deaths", ascending = False, inplace = True)
+fig1, ax1 = plt.subplots()
+ax1.pie(
+    sortDeaths['Deaths'],
+    labels=sortDeaths['Country/Region'],
+    autopct='%1.1f%%',
+    startangle=90)
+ax1.axis('equal')
+plt.title('Top 10 Deaths Case')
+plt.show()
+
+
+# %%
+sortActive= final_data.nlargest(10, "Active")
+sortActive.sort_values(by = "Active", ascending = False, inplace = True)
+fig1, ax1 = plt.subplots()
+ax1.pie(
+    sortActive['Active'],
+    labels=sortActive['Country/Region'],
+    autopct='%1.1f%%',
+    startangle=90)
+ax1.axis('equal')
+plt.title('Top 10 Active Case')
+plt.show()
+
+
+# %%
+sortRecovered= final_data.nlargest(10, "Recovered")
+sortRecovered.sort_values(by = "Recovered", ascending = False, inplace = True)
+fig1, ax1 = plt.subplots()
+ax1.pie(
+    sortRecovered['Recovered'],
+    labels=sortRecovered['Country/Region'],
+    autopct='%1.1f%%',
+    startangle=90)
+ax1.axis('equal')
+plt.title('Top 10 Recovered Case')
+plt.show()
+
+# %% [markdown]
+# ### **Trend Confirmed Case**
+
+# %%
+dataGroup.iplot(kind = "bar", y = "Confirmed", title = "Tren Confirmed Case Global",xTitle = "Time", yTitle = 'Confimred Cases')
+
+# %% [markdown]
+# ### **Trend Deaths Case**
+
+# %%
+dataGroup.iplot(kind = "bar", y = "Deaths", title = "Tren Confirmed Case Global",xTitle = "Time", yTitle = 'Confimred Cases')
+
+# %% [markdown]
+# ### **Trend Active Cases**
+
+# %%
+dataGroup.iplot(kind = "bar", y = "Active", title = "Tren Confirmed Case Global",xTitle = "Time", yTitle = 'Confimred Cases')
+
+# %% [markdown]
+# ### **Trend Recovered Case**
+
+# %%
+dataGroup.iplot(kind = "bar", y = "Recovered", title = "Tren Confirmed Case Global",xTitle = "Time", yTitle = 'Confimred Cases')
+
+# %% [markdown]
+# ### **Comparison Trend Confirmed, Deaths, Recovered, and Active Case**
 
 # %%
 dataGroup.iplot(title = "Trend Kasus COVID-19 Secara Global", xTitle = "Time", yTitle = "Amount")
 
 # %% [markdown]
-# ### **Categories Country**
+# ### **Maping Categories Country**
+# %% [markdown]
+# **function for maping**
+
+# %%
+def maping(data_map, location, color, hover_name, title, colbar):
+    fig = px.choropleth(data, locations=location,
+                    color=color,locationmode='country names', 
+                    hover_name=hover_name, 
+                    color_continuous_scale=px.colors.sequential.Plasma,
+                    template ='plotly_white')
+    fig.update_layout(title_text=title)
+    fig.update_coloraxes(colorbar_title=colbar)
+    fig.show()
+
 # %% [markdown]
 # **Quite Vulnerable**
 
 # %%
-# Cukup Rawan
-fig = px.choropleth(cukupRawan, locations=cukupRawan['Country/Region'],
-                    color=cukupRawan['Confirmed'],locationmode='country names', 
-                    hover_name=cukupRawan['Country/Region'], 
-                    color_continuous_scale=px.colors.sequential.Plasma,
-                    template ='plotly_white')
-fig.update_layout(title_text="The country is quite vulnerable")
-fig.update_coloraxes(colorbar_title="Number of confirmed cases")
-
-fig.show()
+maping(last_day, cukupRawan['Country/Region'], cukupRawan['Confirmed'], cukupRawan['Country/Region'], 'Quite Vulnerable', 'Number of Confirmed')
 
 
 # %%
@@ -244,16 +382,7 @@ cukupRawan.style.background_gradient(cmap = "Reds")
 # **Vulnerable Country**
 
 # %%
-# Rawan
-fig = px.choropleth(last_day, locations=rawan['Country/Region'],
-                    color=rawan['Confirmed'],locationmode='country names', 
-                    hover_name=rawan['Country/Region'], 
-                    color_continuous_scale=px.colors.sequential.Plasma,
-                    template ='plotly_white')
-fig.update_layout(title_text="Vulnerable Country")
-fig.update_coloraxes(colorbar_title="Number of confirmed cases")
-
-fig.show()
+maping(last_day, rawan['Country/Region'], rawan['Confirmed'], rawan['Country/Region'], 'Vulnerable Country', 'Number of Confirmed')
 
 
 # %%
@@ -263,16 +392,7 @@ rawan.style.background_gradient(cmap = "Reds")
 # **Very Vulnerable Country**
 
 # %%
-# Sangat Rawan
-fig = px.choropleth(last_day, locations=sangatRawan['Country/Region'],
-                    color=sangatRawan['Confirmed'],locationmode='country names', 
-                    hover_name=sangatRawan['Country/Region'], 
-                    color_continuous_scale=px.colors.sequential.Plasma,
-                    template ='plotly_white')
-fig.update_layout(title_text="Very Vulnerable Country")
-fig.update_coloraxes(colorbar_title="Number of confirmed cases")
-
-fig.show()
+maping(last_day, sangatRawan['Country/Region'], sangatRawan['Confirmed'], sangatRawan['Country/Region'], 'Very Vulnerable Country', 'Number of Confirmed')
 
 
 # %%
