@@ -1,6 +1,7 @@
 # Data-Visualization-Covid19
 
-## **For better view, please visit 
+**For better view, please visit :**
+https://nbviewer.jupyter.org/github/agushery/DataVisualization-COVID19/blob/master/Data_Visualization_Final.ipynb
 
 ## Top 10 Confirmed
 ![top10confirmed](https://user-images.githubusercontent.com/63402638/120363177-67b16600-c33e-11eb-9cde-ec61fb7b004a.png)
