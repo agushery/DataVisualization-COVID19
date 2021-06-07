@@ -1,0 +1,233 @@
+cca2,name,pop2020,rank
+CN,China,1439323776,1
+IN,India,1380004385,2
+US,US,331002651,3
+ID,Indonesia,273523615,4
+PK,Pakistan,220892340,5
+BR,Brazil,212559417,6
+NG,Nigeria,206139589,7
+BD,Bangladesh,164689383,8
+RU,Russia,145934462,9
+MX,Mexico,128932753,10
+JP,Japan,126476461,11
+ET,Ethiopia,114963588,12
+PH,Philippines,109581078,13
+EG,Egypt,102334404,14
+VN,Vietnam,97338579,15
+CD,Congo (Kinshasa),89561403,16
+TR,Turkey,84339067,17
+IR,Iran,83992949,18
+DE,Germany,83783942,19
+TH,Thailand,69799978,20
+GB,United Kingdom,67886011,21
+FR,France,65273511,22
+TZ,Tanzania,59734218,23
+IT,Italy,60461826,24
+ZA,South Africa,59308690,25
+KE,Kenya,53771296,26
+MM,Burma,54409800,27
+KR,"Korea, South",51269185,28
+CO,Colombia,50882891,29
+UG,Uganda,45741007,30
+ES,Spain,46754778,31
+AR,Argentina,45195774,32
+SD,Sudan,43849260,33
+DZ,Algeria,43851044,34
+UA,Ukraine,43733762,35
+IQ,Iraq,40222493,36
+AF,Afghanistan,38928346,37
+CA,Canada,37742154,38
+PL,Poland,37846611,39
+MA,Morocco,36910560,40
+SA,Saudi Arabia,34813871,41
+UZ,Uzbekistan,33469203,42
+AO,Angola,32866272,43
+PE,Peru,32971854,44
+MY,Malaysia,32365999,45
+MZ,Mozambique,31255435,46
+GH,Ghana,31072940,47
+YE,Yemen,29825964,48
+NP,Nepal,29136808,49
+VE,Venezuela,28435940,50
+MG,Madagascar,27691018,51
+CM,Cameroon,26545863,52
+CI,Ivory Coast,26378274,53
+KP,North Korea,25778816,54
+AU,Australia,25499884,55
+NE,Niger,24206644,56
+TW,Taiwan*,23816775,57
+LK,Sri Lanka,21413249,58
+BF,Burkina Faso,20903273,59
+ML,Mali,20250833,60
+MW,Malawi,19129952,61
+CL,Chile,19116201,62
+RO,Romania,19237691,63
+KZ,Kazakhstan,18776707,64
+ZM,Zambia,18383955,65
+SY,Syria,17500658,66
+GT,Guatemala,17915568,67
+EC,Ecuador,17643054,68
+SN,Senegal,16743927,69
+NL,Netherlands,17134872,70
+KH,Cambodia,16718965,71
+TD,Chad,16425864,72
+SO,Somalia,15893222,73
+ZW,Zimbabwe,14862924,74
+GN,Guinea,13132795,75
+RW,Rwanda,12952218,76
+BJ,Benin,12123200,77
+BI,Burundi,11890784,78
+TN,Tunisia,11818619,79
+BO,Bolivia,11673021,80
+BE,Belgium,11589623,81
+HT,Haiti,11402528,82
+SS,South Sudan,11193725,83
+CU,Cuba,11326616,84
+DO,Dominican Republic,10847910,85
+CZ,Czech Republic,10708981,86
+GR,Greece,10423054,87
+JO,Jordan,10203134,88
+AZ,Azerbaijan,10139177,89
+PT,Portugal,10196709,90
+SE,Sweden,10099265,91
+HN,Honduras,9904607,92
+AE,United Arab Emirates,9890402,93
+TJ,Tajikistan,9537645,94
+HU,Hungary,9660351,95
+BY,Belarus,9449323,96
+PG,Papua New Guinea,8947024,97
+AT,Austria,9006398,98
+IL,Israel,8655535,99
+CH,Switzerland,8654622,100
+RS,Serbia,8737371,101
+TG,Togo,8278724,102
+SL,Sierra Leone,7976983,103
+HK,Hong Kong,7496981,104
+LA,Laos,7275560,105
+PY,Paraguay,7132538,106
+LY,Libya,6871292,107
+BG,Bulgaria,6948445,108
+LB,Lebanon,6825445,109
+NI,Nicaragua,6624554,110
+KG,Kyrgyzstan,6524195,111
+SV,El Salvador,6486205,112
+TM,Turkmenistan,6031200,113
+SG,Singapore,5850342,114
+DK,Denmark,5792202,115
+CG,Congo (Brazzaville),5518087,116
+FI,Finland,5540720,117
+NO,Norway,5421241,118
+SK,Slovakia,5459642,119
+OM,Oman,5106626,120
+PS,Palestine,5101414,121
+LR,Liberia,5057681,122
+CR,Costa Rica,5094118,123
+IE,Ireland,4937786,124
+CF,Central African Republic,4829767,125
+NZ,New Zealand,4822233,126
+MR,Mauritania,4649658,127
+PA,Panama,4314767,128
+KW,Kuwait,4270571,129
+HR,Croatia,4105267,130
+MD,Moldova,4033963,131
+GE,Georgia,3989167,132
+ER,Eritrea,3546421,133
+UY,Uruguay,3473730,134
+MN,Mongolia,3278290,135
+BA,Bosnia and Herzegovina,3280819,136
+JM,Jamaica,2961167,137
+AM,Armenia,2963243,138
+QA,Qatar,2881053,139
+AL,Albania,2877797,140
+PR,Puerto Rico,2860853,141
+LT,Lithuania,2722289,142
+NA,Namibia,2540905,143
+GM,Gambia,2416668,144
+BW,Botswana,2351627,145
+GA,Gabon,2225734,146
+LS,Lesotho,2142249,147
+MK,North Macedonia,2083374,148
+SI,Slovenia,2078938,149
+GW,Guinea-Bissau,1968001,150
+LV,Latvia,1886198,151
+BH,Bahrain,1701575,152
+GQ,Equatorial Guinea,1402985,153
+TT,Trinidad and Tobago,1399488,154
+TL,Timor-Leste,1318445,155
+EE,Estonia,1326535,156
+MU,Mauritius,1271768,157
+CY,Cyprus,1207359,158
+SZ,Eswatini,1160164,159
+DJ,Djibouti,988000,160
+FJ,Fiji,896445,161
+RE,Reunion,895312,162
+KM,Comoros,869601,163
+GY,Guyana,786552,164
+BT,Bhutan,771608,165
+SB,Solomon Islands,686884,166
+MO,Macau,649335,167
+LU,Luxembourg,625978,168
+ME,Montenegro,628066,169
+EH,Western Sahara,597339,170
+SR,Suriname,586632,171
+CV,Cape Verde,555987,172
+MV,Maldives,540544,173
+MT,Malta,441543,174
+BN,Brunei,437479,175
+BZ,Belize,397628,176
+GP,Guadeloupe,400124,177
+BS,Bahamas,393244,178
+MQ,Martinique,375265,179
+IS,Iceland,341243,180
+VU,Vanuatu,307145,181
+GF,French Guiana,298682,182
+NC,New Caledonia,285498,183
+BB,Barbados,287375,184
+PF,French Polynesia,280908,185
+YT,Mayotte,272815,186
+ST,Sao Tome and Principe,219159,187
+WS,Samoa,198414,188
+LC,Saint Lucia,183627,189
+GU,Guam,168775,190
+CW,Curacao,164093,191
+KI,Kiribati,119449,192
+FM,Micronesia,115023,193
+GD,Grenada,112523,194
+VC,Saint Vincent and the Grenadines,110940,195
+AW,Aruba,106766,196
+TO,Tonga,105695,197
+VI,United States Virgin Islands,104425,198
+SC,Seychelles,98347,199
+AG,Antigua and Barbuda,97929,200
+IM,Isle of Man,85033,201
+AD,Andorra,77265,202
+DM,Dominica,71986,203
+KY,Cayman Islands,65722,204
+BM,Bermuda,62278,205
+MH,Marshall Islands,59190,206
+MP,Northern Mariana Islands,57559,207
+GL,Greenland,56770,208
+AS,American Samoa,55191,209
+KN,Saint Kitts and Nevis,53199,210
+FO,Faroe Islands,48863,211
+SX,Sint Maarten,42876,212
+MC,Monaco,39242,213
+MF,Saint Martin,38666,214
+TC,Turks and Caicos Islands,38717,215
+LI,Liechtenstein,38128,216
+SM,San Marino,33931,217
+GI,Gibraltar,33691,218
+VG,British Virgin Islands,30231,219
+PW,Palau,18094,220
+CK,Cook Islands,17564,221
+AI,Anguilla,15003,222
+TV,Tuvalu,11792,223
+WF,Wallis and Futuna,11239,224
+NR,Nauru,10824,225
+BL,Saint Barthelemy,9877,226
+PM,Saint Pierre and Miquelon,5794,227
+MS,Montserrat,4992,228
+FK,Falkland Islands,3480,229
+NU,Niue,1626,230
+TK,Tokelau,1357,231
+VA,Vatican City,801,232
